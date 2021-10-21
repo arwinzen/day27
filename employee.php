@@ -70,6 +70,7 @@
   }
 
   ?>
+  <br>
   <a href="javascript:history.back()">Back to previous page</a>
   </body>
 </html>

@@ -52,36 +52,6 @@
       }
   }
 
-
-//   function checkAdmin($fname, $lname, $conn){
-//     $sql_check_adm = "SELECT id FROM admin WHERE adm_fname = '$fname' AND adm_lname = '$lname' LIMIT 1";
-//     $sql_disp_emp = "SELECT emp_fname, emp_lname FROM employees";
-
-//     $result = $conn->query($sql_check_adm);
-//     $result_disp = $conn->query($sql_disp_emp);
-//     // print_r($result_disp);
-//     if($result){
-//       // if admin id matches
-//       if($result_disp){
-//         if($count = $result_disp->num_rows){
-//           echo '<p>', $count, '</p>';
-
-//           while($row = $result_disp->fetch_object()){
-//               echo "<a href=\"attendance.php\">".$row->emp_fname. " ". $row->emp_lname."</a>". "<br>";
-//           }
-//         }
-//       } else {
-//           echo "Error: " . $sql_disp_emp . "<br>" . $conn->error;
-//         }
-//       }
-    
-//     // print_r($result);
-//   }
-
-//   if($fname && $lname){
-//     checkAdmin($fname, $lname, $conn);
-//   }
-
   ?>
     <br>
     <a href="javascript:history.back()">Back to previous page</a>
