@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width,initial-scale=1.0">
- <title>Day 27 Tutorial</title>
+ <title>Admin Login</title>
  <link rel="stylesheet" href="">
  <style>
         *{ 
@@ -29,15 +29,15 @@
     </style>
 </head>
 <body>
-    <h3>Employee Attendance</h3>
-    <form action="action.php" method="POST" autocomplete="off">
+    <h3>Admin Login</h3>
+    <form action="employee.php" method="POST" autocomplete="off">
         <label for="fname">First name : </label>
         <input type="text" name="fname" required autocomplete="off">
         <br>
         <label for="fname">Last name : </label>
         <input type="text" name="lname" required autocomplete="off">
         <br>
-        <input type="submit" name="submit" value="HERE!">
+        <input type="submit" name="submit" value="Login">
     </form>
     
     <?php
