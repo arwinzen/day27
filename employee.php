@@ -29,7 +29,7 @@
       </style>
   </head>
   <body>
-    
+    <h2>Employee List</h2>
   <?php
   include "db_sql.php";
   $fname = $_POST['fname'];
@@ -52,7 +52,7 @@
 
           while($row = $result_disp->fetch_object()){
               echo <<<HEREDOC
-                <a href="attendance.php?id=$row->emp_id">$row->emp_fname $row->emp_lname</a>
+                <pre><a href="attendance.php?id=$row->emp_id">$row->emp_fname $row->emp_lname</a></pre>
                 <br>
               HEREDOC;
           }
@@ -70,7 +70,6 @@
   }
 
   ?>
-  <br>
-  <a href="javascript:history.back()">Back to previous page</a>
+  <pre><a href="javascript:history.back()">Back to previous page</a></pre>
   </body>
 </html>

@@ -78,6 +78,6 @@
 
   ?>
   <br>
-  <a href="javascript:history.back()">Back to previous page</a>
+  <pre><a href="javascript:history.back()">Back to previous page</a></pre>
   </body>
 </html>

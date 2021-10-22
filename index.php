@@ -30,6 +30,7 @@
 </head>
 <body>
     <h3>Employee Attendance</h3>
+    <pre><a href="admin.php">Admin Login</a></pre>
     <form action="action.php" method="POST" autocomplete="off">
         <label for="fname">First name : </label>
         <input type="text" name="fname" required autocomplete="off">

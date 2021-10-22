@@ -26,15 +26,22 @@
           header{
               padding: 0.5rem 2rem;
           }
+          input {
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+          }
       </style>
   </head>
   <body>
+    <h2>Employee Checkin</h2>
     
   <?php
   include "db_sql.php";
   $id = $_GET['id'];
 //   echo $id;
-  $sql_disp_att = "SELECT att_clockin FROM `attendance` WHERE emp_id = '$id'";
+  $sql_disp_att = "SELECT * FROM `attendance` WHERE emp_id = '$id'";
   $result = $conn->query($sql_disp_att);
 
   if($id){
@@ -43,7 +50,13 @@
             // echo "<p>". $count . "</p>";
 
             while($row = $result->fetch_object()){
-                echo "<pre>". $row->att_clockin . "</pre>";
+                echo<<<HEREDOC
+                  <form action="change.php?id=$row->att_id" method="POST">
+                    <input value="$row->att_clockin" readonly name="checkin">
+                    <input type="submit"> 
+                  </form>
+                HEREDOC;
+                // echo "<pre>". $row->att_clockin . "</pre>";
             }
         }
 
@@ -51,9 +64,20 @@
         echo "Error: " . $sql_disp_att . "<br>" . $conn->error;
       }
   }
+  
 
   ?>
     <br>
-    <a href="javascript:history.back()">Back to previous page</a>
+    <pre><a href="javascript:history.back()">Back to previous page</a></pre>
+    <script>
+      let inputs = document.querySelectorAll('input');
+      console.dir(inputs);
+      for (let i = 0; i < inputs.length - 1; i++){
+        inputs[i].addEventListener("click", function(){
+          console.log("im an input");
+          inputs[i].removeAttribute('readonly');
+        })
+      }
+    </script>
   </body>
 </html>
